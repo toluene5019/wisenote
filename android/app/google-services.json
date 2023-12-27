@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "292443165218",
+    "project_id": "wisenote",
+    "storage_bucket": "wisenote.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292443165218:android:3964130250edada9e6f07b",
+        "android_client_info": {
+          "package_name": "com.wisenote.ua.wisenote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRRmXc5FQUGvC5Ck5b6F0CB5NxZDXIbKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
