@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wisenote/constants/routes.dart';
 import 'package:wisenote/enums/menu_action.dart';
 import 'package:wisenote/services/auth/auth_service.dart';
+import 'package:wisenote/services/auth/bloc/auth_bloc.dart';
+import 'package:wisenote/services/auth/bloc/auth_event.dart';
 import 'package:wisenote/services/cloud/cloud_note.dart';
 import 'package:wisenote/services/cloud/firebase_cloud_storage.dart';
 import 'package:wisenote/utilities/dialogs/logout_dialog.dart';
@@ -42,11 +45,9 @@ class _NotesViewState extends State<NotesView> {
                 case MenuAction.logout:
                   final shouldLogout = await showLogOutDialog(context);
                   if (shouldLogout) {
-                    await AuthService.firebase().logOut();
-                    Navigator.of(context).pushNamedAndRemoveUntil(
-                      loginRoute,
-                      (_) => false,
-                    );
+                    context.read<AuthBloc>().add(
+                          const AuthEventLogOut(),
+                        );
                   }
               }
             },
@@ -88,7 +89,7 @@ class _NotesViewState extends State<NotesView> {
               return const CircularProgressIndicator();
           }
         },
-      ), 
+      ),
     );
   }
 }
