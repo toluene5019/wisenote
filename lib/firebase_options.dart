@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -70,5 +67,14 @@ class DefaultFirebaseOptions {
     projectId: 'wisenote',
     storageBucket: 'wisenote.appspot.com',
     iosBundleId: 'com.wisenote.ua.wisenote',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAWTtrCLvaNvA_OjGF449Cx-Ce565ENxSo',
+    appId: '1:292443165218:ios:2034175cba7235e1e6f07b',
+    messagingSenderId: '292443165218',
+    projectId: 'wisenote',
+    storageBucket: 'wisenote.appspot.com',
+    iosBundleId: 'com.wisenote.ua.wisenote.RunnerTests',
   );
 }

@@ -106,6 +106,12 @@ class _NotesViewState extends State<NotesView> {
           }
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context).pushNamed(createOrUpdateNoteRoute);
+        },
+      ),
     );
   }
 }
