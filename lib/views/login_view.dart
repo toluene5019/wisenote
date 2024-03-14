@@ -1,10 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wisenote/extensions/buildcontext/loc.dart';
 import 'package:wisenote/services/auth/auth_exceptions.dart';
+import 'package:wisenote/services/auth/auth_service.dart';
 import 'package:wisenote/services/auth/bloc/auth_bloc.dart';
 import 'package:wisenote/services/auth/bloc/auth_event.dart';
 import 'package:wisenote/services/auth/bloc/auth_state.dart';
+import 'package:wisenote/services/google_auth_service.dart';
 import 'package:wisenote/utilities/dialogs/error_dialog.dart';
 
 class LoginView extends StatefulWidget {
@@ -118,6 +121,47 @@ class _LoginViewState extends State<LoginView> {
                   },
                   child: Text(
                     context.loc.login_view_not_registered_yet,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        'Or continue with',
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                GestureDetector(
+                  onTap: () => GoogleAuthService().signInWithGoogle(),
+                  child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'lib/images/google.png',
+                          height: 50,
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
