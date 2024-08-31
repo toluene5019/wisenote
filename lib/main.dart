@@ -22,8 +22,10 @@ void main() {
     title: 'Flutter Demo',
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blue,
+        )),
     home: BlocProvider<AuthBloc>(
       create: (context) => AuthBloc(FirebaseAuthProvider()),
       child: const HomePage(),

@@ -70,9 +70,6 @@ class _RegisterViewState extends State<RegisterView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  context.loc.register_view_prompt,
-                ),
                 TextField(
                   controller: _email,
                   enableSuggestions: false,

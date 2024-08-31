@@ -58,15 +58,13 @@ class _LoginViewState extends State<LoginView> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(context.loc.login),
+          // backgroundColor: Colors.blue,
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Text(
-                  context.loc.login_view_prompt,
-                ),
                 TextField(
                   controller: _email,
                   enableSuggestions: false,
